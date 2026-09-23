@@ -164,7 +164,8 @@
     /* ---------- Hero ---------- */
     .hero {
       background:
-        linear-gradient(180deg, rgba(20,66,95,0.72), rgba(20,66,95,0.82)),
+        linear-gradient(180deg, rgba(20,66,95,0.80), rgba(20,66,95,0.88)),
+        url("https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80&auto=format&fit=crop") center/cover no-repeat,
         radial-gradient(circle at 20% 20%, #2a72a3, #14425f 70%);
       color: #fff;
       text-align: center;
@@ -254,13 +255,12 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       background: var(--bg-soft);
-      min-height: 260px;
-      display: grid;
-      place-items: center;
-      color: var(--muted);
-      border: 1px dashed var(--border);
-      text-align: center;
-      padding: 24px;
+    }
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      object-fit: cover;
     }
     .prose h4 { color: var(--brand-dark); margin-top: 0; font-size: 1.3rem; }
     .prose p { color: var(--ink); }
@@ -278,6 +278,9 @@
       padding: 28px;
       box-shadow: var(--shadow);
     }
+    .card.has-img { padding: 0; overflow: hidden; }
+    .card.has-img .card-img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .card.has-img .card-body { padding: 24px 28px 28px; }
     .card .ico {
       width: 48px; height: 48px;
       border-radius: 12px;
@@ -399,8 +402,8 @@
   <header class="site">
     <div class="topbar">
       <div class="wrap">
-        <span>📍 Klang Valley, Malaysia</span>
-        <span>✉️ <a href="mailto:hello@og-drc.example">hello@og-drc.example</a> &nbsp;•&nbsp; ☎️ +60 3-0000 0000</span>
+        <span>📍 Ipoh Garden Square, Ipoh, Perak</span>
+        <span>✉️ <a href="mailto:aknikarn@yahoo.com">aknikarn@yahoo.com</a> &nbsp;•&nbsp; ☎️ <a href="tel:+60122534116">012-253 4116</a></span>
       </div>
     </div>
 
@@ -458,10 +461,8 @@
   <section id="about">
     <div class="wrap two-col">
       <div class="media-card">
-        <div>
-          <div style="font-size:3rem;">📚</div>
-          <p style="margin:8px 0 0;">Your photo / classroom image goes here</p>
-        </div>
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&q=80&auto=format&fit=crop"
+             alt="A tutor helping a young child with reading and writing" loading="lazy" />
       </div>
       <div class="prose">
         <span class="eyebrow" style="text-transform:uppercase;letter-spacing:2px;font-size:0.78rem;font-weight:700;color:var(--accent-dark);">About Us</span>
@@ -516,20 +517,29 @@
         <p>Our teaching is language-based, multi-sensory, structured, sequential, cumulative, cognitive and flexible — using the Orton-Gillingham approach.</p>
       </div>
       <div class="cards">
-        <div class="card">
-          <div class="ico">👤</div>
-          <h4>One-on-one tutoring</h4>
-          <p>Individual sessions focused on the underlying learning skills each child needs, at a pace that suits them.</p>
+        <div class="card has-img">
+          <img class="card-img" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80&auto=format&fit=crop" alt="A child learning one-on-one" loading="lazy" />
+          <div class="card-body">
+            <div class="ico">👤</div>
+            <h4>One-on-one tutoring</h4>
+            <p>Individual sessions focused on the underlying learning skills each child needs, at a pace that suits them.</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="ico">🖐️</div>
-          <h4>Multi-sensory teaching</h4>
-          <p>Seeing, hearing, saying and touching together, so new skills stick through more than one pathway.</p>
+        <div class="card has-img">
+          <img class="card-img" src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80&auto=format&fit=crop" alt="Hands-on multi-sensory learning materials" loading="lazy" />
+          <div class="card-body">
+            <div class="ico">🖐️</div>
+            <h4>Multi-sensory teaching</h4>
+            <p>Seeing, hearing, saying and touching together, so new skills stick through more than one pathway.</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="ico">📝</div>
-          <h4>Homework guidance</h4>
-          <p>Support with schoolwork in both Bahasa Malaysia and English to keep children on track in class.</p>
+        <div class="card has-img">
+          <img class="card-img" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80&auto=format&fit=crop" alt="Books and homework study materials" loading="lazy" />
+          <div class="card-body">
+            <div class="ico">📝</div>
+            <h4>Homework guidance</h4>
+            <p>Support with schoolwork in both Bahasa Malaysia and English to keep children on track in class.</p>
+          </div>
         </div>
       </div>
       <div style="text-align:center;margin-top:34px;">
@@ -595,11 +605,18 @@
 
         <div>
           <ul class="contact-info">
-            <li><div class="ico">📍</div><div><strong>Location</strong><span>Klang Valley, Selangor, Malaysia</span></div></li>
-            <li><div class="ico">✉️</div><div><strong>Email</strong><span>hello@og-drc.example</span></div></li>
-            <li><div class="ico">☎️</div><div><strong>Phone</strong><span>+60 3-0000 0000</span></div></li>
-            <li><div class="ico">🕘</div><div><strong>Hours</strong><span>Monday – Saturday, 9:00am – 6:00pm</span></div></li>
+            <li><div class="ico">📍</div><div><strong>Address</strong><span>10-A, Ground Floor, Ipoh Garden Square,<br />Jalan Sultan Azlan Shah Utara, Taman Ipoh Selatan,<br />31400 Ipoh, Perak</span></div></li>
+            <li><div class="ico">✉️</div><div><strong>Email</strong><span><a href="mailto:aknikarn@yahoo.com">aknikarn@yahoo.com</a></span></div></li>
+            <li><div class="ico">☎️</div><div><strong>Phone</strong><span><a href="tel:+60122534116">012-253 4116</a></span></div></li>
+            <li><div class="ico">🕘</div><div><strong>Hours</strong><span>Monday to Saturday, 9:00am – 9:00pm</span></div></li>
           </ul>
+          <div class="media-card" style="margin-top:8px;">
+            <iframe
+              title="Map to OG Dyslexia Remedial Centre, Ipoh Garden Square"
+              src="https://www.google.com/maps?q=Ipoh+Garden+Square,+Jalan+Sultan+Azlan+Shah+Utara,+31400+Ipoh,+Perak&output=embed"
+              style="width:100%;height:240px;border:0;display:block;" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -617,7 +634,8 @@
         <a href="#contact">Contact</a>
       </div>
       <p>&copy; <span id="year"></span> OG Dyslexia Remedial Centre. All rights reserved.</p>
-      <p style="opacity:0.7;">An original demo website template. Replace the placeholder text, images and contact details with your own.</p>
+      <p style="opacity:0.7;">10-A, Ground Floor, Ipoh Garden Square, Jalan Sultan Azlan Shah Utara, Taman Ipoh Selatan, 31400 Ipoh, Perak &nbsp;•&nbsp; 012-253 4116</p>
+      <p style="opacity:0.55;font-size:0.8rem;">Photos via Unsplash (free to use). Swap in your own centre photos anytime.</p>
     </div>
   </footer>
 
